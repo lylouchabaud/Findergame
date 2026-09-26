@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://findergame-5t96-i7d08fdev-lylou-ch.vercel.app/sitemap.xml

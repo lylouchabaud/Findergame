@@ -45,10 +45,17 @@ git push -u origin main
 
 ## Être indexé par Google
 
-Un déploiement Vercel public est automatiquement accessible aux robots de Google, mais l'indexation n'est ni immédiate ni garantie. Pour l'accélérer :
+Un déploiement Vercel public est automatiquement accessible aux robots de Google, mais l'indexation n'est ni immédiate ni garantie (souvent plusieurs jours à quelques semaines pour un nouveau site). Apparaître en première page est encore un autre sujet (référencement), qui prend en général bien plus de temps.
 
-- Inscris ton site sur [Google Search Console](https://search.google.com/search-console) et soumets ton URL.
-- Vérifie que le site n'est pas protégé par mot de passe dans les réglages Vercel.
+Étapes à faire toi-même (nécessitent ton compte Google) :
+
+1. Va sur [Google Search Console](https://search.google.com/search-console), ajoute ta propriété avec l'URL exacte de ton site Vercel.
+2. Vérifie la propriété (méthode "balise HTML" la plus simple avec ce type de site).
+3. Une fois vérifié, utilise l'outil **Inspection d'URL**, colle l'URL de ton site, puis clique sur **Demander une indexation**.
+4. Dans **Sitemaps**, soumets `sitemap.xml` (déjà inclus dans ce projet, servi automatiquement à la racine).
+5. Patiente — revérifie dans Search Console au bout d'une semaine environ.
+
+Point technique à connaître : ce site est une application React qui génère son contenu côté navigateur (pas de HTML pré-rendu par un serveur). Google arrive à l'indexer, mais moins vite et moins bien qu'un site avec du HTML déjà présent au chargement. Si le référencement est important pour toi à terme, la vraie solution est de migrer vers un framework avec rendu serveur (Next.js par exemple) — un chantier à part, à envisager plus tard si besoin.
 
 ## Notes
 
